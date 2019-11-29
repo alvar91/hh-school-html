@@ -1,9 +1,9 @@
 {
     "name": "hh-school-html",
     "version": "1.0.0",
-    "homepage": "http://leonidfeskov.github.io/hh-school-html/",
+    "homepage": "https://alvar91.github.io/hh-school-html/",
     "main": "index.js",
-    "author": "Leonid Feskov",
+    "author": "Varov Aleksey",
     "license": "MIT",
     "scripts": {
         "dev": "parcel index.html",
