@@ -1,0 +1,77 @@
+.footer {
+    @media @screen-only-s {
+        min-height: 300px;
+    }
+    @media @screen-gt-s {
+        min-height: 230px;
+    }
+    background-color: @color-dark;
+    &__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #666666;
+        @media @screen-only-s {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 40px 0;
+        }
+        @media @screen-gt-s {
+            padding: 30px 0;
+        }
+    }
+    &__socials {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__mobile-aps {
+        display: flex;
+        @media @screen-only-s {
+            margin-top: 30px;
+        }
+    }
+    &__hh-logo {
+        display: none;
+        @media @screen-gt-m {
+            display: block;
+        } 
+    }
+    &__copyright {
+        @media @screen-only-s {
+            padding: 15px 0 20px;
+        }
+        @media @screen-only-m {
+            padding: 30px 0;
+        }
+        @media @screen-only-l {
+            padding: 30px 0 35px;
+        }
+    }
+}
+
+.social {
+    &-img {
+        width: 36px;
+        height: 36px;
+        margin-right: 15px;
+    }
+    @media @screen-only-s {
+        margin: 40px 0;
+    }
+    @media @screen-gt-s {
+        margin: 30px 0;
+    }
+}
+
+.mobile-aps-img {
+    margin: 0 4px;
+    height: 40px;
+}
+
+.copyright {
+    &__text {
+        font: 14px/1.2 @font-family-regular;
+        color: #999999;
+    }
+}
