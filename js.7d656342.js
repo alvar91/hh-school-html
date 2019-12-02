@@ -3,4 +3,4 @@ var e=document.createElement("div");e.className="grid",document.body.appendChild
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("./grid");
 },{"./grid":"mwQg"}]},{},["QvaY"], null)
-//# sourceMappingURL=%27.%27/js.7d656342.js.map
+//# sourceMappingURL=js.7d656342.js.map
