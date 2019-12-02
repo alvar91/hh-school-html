@@ -1,0 +1,265 @@
+.popup-order {
+    &__wrapper {
+        margin: 0 5px 40px;
+        box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    &__checkout {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__content {
+        padding: 40px;
+    }
+
+    &__formular {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.checkout {
+    &__title {
+        font: 36px/1.2 ProximaNovaCond, Arial, sans-serif;
+    }
+
+    &-button-icon {
+        width: 30px;
+        height: 30px;
+        background: no-repeat 50% 50%;
+        border: 0;
+        cursor: pointer;
+        text-indent: -9999px;
+    }
+
+    &-button-icon_exit {
+        background-image: url(exit-icon.svg);
+    }
+}
+
+.formular {
+    &__form {
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font: 18px/1.2 @font-family-heading;
+    }
+
+    &__phone-number {
+        display: flex;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    &__radio-group {
+        display: inline-block;
+        overflow: hidden;
+
+        & input[type=radio] {
+            display: none;
+        }
+    }
+    &__checkbox {
+        margin-bottom: 20px;
+    }
+    &__product {
+        max-width: 290px;
+        @media @screen-only-s {
+            display: none;
+        }
+        @media @screen-gt-s {
+            display: block;
+        }
+    }
+}
+
+.form {
+    &__text {
+        margin-top: 10px;
+        height: 38px;
+        text-indent: 10px;
+        width: 100%;
+        font: 14px/1.2 @font-family-regular;
+        box-sizing: border-box;
+        border: 1px solid #DFDEDD;
+
+        &:focus {
+            border-color: @color-primary;
+        }
+
+        &_plus::placeholder {
+            color: #333333;
+        }
+    }
+}
+
+.phone-number {
+    &__region-code {
+        width: 63px;
+    }
+
+    &__number {
+        flex-grow: 1;
+    }
+
+    &__country-code {
+        width: 38px;
+    }
+}
+
+.noborder-right {
+    border-right: 0;
+}
+
+// способ получения
+.item__label {
+    display: table-cell;
+    min-width: 123px;
+    cursor: pointer;
+    line-height: 38px;
+    border: 1px solid #999;
+    user-select: none;
+}
+
+.radio-group {
+    &__item {
+        display: table-cell;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    &__item input[type=radio]:checked+label {
+        background: #EEEEEE;
+    }
+}
+
+// select
+select {
+    /* styling */
+    width: 100%;
+    display: inline-block;
+    background-color: #F9F9F9;
+    border: 1px solid #C5C9CA;
+    border-radius: 2px;
+    font: 14px/1.2 @font-family-regular;
+    padding: 10px;
+
+    /* reset */
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* arrows */
+.select__arrows {
+    background-image:
+        linear-gradient(45deg, transparent 50%, #C5C9CA 50%),
+        linear-gradient(135deg, #C5C9CA 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+
+    &:focus {
+        background-image:
+            linear-gradient(45deg, #C5C9CA 50%, transparent 50%),
+            linear-gradient(135deg, transparent 50%, #C5C9CA 50%),
+            linear-gradient(to right, #ccc, #ccc);
+        background-position:
+            calc(100% - 15px) 1em,
+            calc(100% - 20px) 1em,
+            calc(100% - 2.5em) 0.5em;
+        background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+        background-repeat: no-repeat;
+        border-color: #EEEEEE;
+        outline: 0;
+    }
+}
+
+// Textarea
+.form__text_area {
+    padding: 9px;
+    text-indent: 1px;
+    height: 100px;
+    resize: none;
+}
+
+// Чекбоксы оплаты
+.form-radio {
+    margin-bottom: 10px;
+    & input[type=radio] {
+        display: none;
+    }
+    & label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        margin-right: 0;
+        line-height: 18px;
+        user-select: none;
+    }
+    & label:before {
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background: url(ellipse-grey.svg) 0 0 no-repeat;
+    }
+     
+    /* Checked */
+    & input[type=radio]:checked + label:before {
+        background: url(ellipse-blue.svg) 0 0 no-repeat;
+    }
+}
+
+
+ // Уведомления checkbox
+
+input[type=checkbox] {display: none;}
+
+input[type=checkbox] + label:before {
+    content: "✔";
+    color: transparent;
+    display: inline-block;
+    border: 1px solid #C5C9CA;
+    border-radius: 2px;
+    font-size: 14px;    
+    line-height: 14px;
+    margin: -5px 10px 0 0;
+    height: 14px;
+    width: 14px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+input[type=checkbox]:checked + label:before {
+    color: #333333;
+}
+
+.button__with_wide {
+    @media @screen-only-s {
+        width: 100%
+    }
+}
+
