@@ -1,0 +1,76 @@
+.formular {
+    &__form {
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font: 18px/1.2 @font-family-heading;
+    }
+
+    &__phone-number {
+        display: flex;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    &__radio-group {
+        display: inline-block;
+        overflow: hidden;
+
+        & input[type=radio] {
+            display: none;
+        }
+    }
+    &__popup-title {
+        margin-bottom: 20px;
+    }
+    &__product {
+        max-width: 290px;
+        @media @screen-only-s {
+            display: none;
+        }
+        @media @screen-gt-s {
+            display: block;
+        }
+    }
+}
+
+.form {
+    &__text {
+        margin-top: 10px;
+        height: 38px;
+        text-indent: 10px;
+        width: 100%;
+        font: 14px/1.2 @font-family-regular;
+        box-sizing: border-box;
+        border: 1px solid #DFDEDD;
+
+        &:focus {
+            border-color: @color-primary;
+        }
+
+        &_plus::placeholder {
+            color: #333333;
+        }
+    }
+}
+
+.phone-number {
+    &__region-code {
+        width: 63px;
+    }
+
+    &__number {
+        flex-grow: 1;
+    }
+
+    &__country-code {
+        width: 38px;
+    }
+}
+
+.noborder-right {
+    border-right: 0;
+}
