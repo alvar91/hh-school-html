@@ -1,18 +1,25 @@
 .formular {
+    &__button {
+        margin-top: 15px;
+    }
+
     &__form {
         flex-direction: column;
     }
 
     &__title {
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 10px;
         font: 18px/1.2 @font-family-heading;
+    }
+    &__text {
+        margin-top: 10px;
     }
 
     &__phone-number {
         display: flex;
+        margin: 10px 0;
         box-sizing: border-box;
-        margin-bottom: 10px;
     }
 
     &__radio-group {
@@ -27,6 +34,7 @@
         margin-bottom: 20px;
     }
     &__product {
+        margin-top: 50px;
         max-width: 290px;
         @media @screen-only-s {
             display: none;
@@ -39,7 +47,6 @@
 
 .form {
     &__text {
-        margin-top: 10px;
         height: 38px;
         text-indent: 10px;
         width: 100%;

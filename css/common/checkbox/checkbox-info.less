@@ -1,10 +1,9 @@
-// Чекбоксы оплаты
-.form-radio {
-    margin-bottom: 10px;
-    & input[type=radio] {
+
+.checkbox {
+    &__input[type=checkbox] {
         display: none;
     }
-    & label {
+    &__title {
         display: inline-block;
         cursor: pointer;
         position: relative;
@@ -13,18 +12,18 @@
         line-height: 18px;
         user-select: none;
     }
-    & label:before {
+    &__title:before {
         content: "";
         display: inline-block;
-        width: 17px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         position: absolute;
         left: 0;
         bottom: 1px;
-        background: url(ellipse-grey.svg) 0 0 no-repeat;
+        background: url(rectangle-grey.svg) 0 0 no-repeat;
     }
      
-    & input[type=radio]:checked + label:before {
-        background: url(ellipse-blue.svg) 0 0 no-repeat;
+    &__input:checked + &__title:before {
+        background: url(rectangle-checked.svg) 0 0 no-repeat;
     }
 }

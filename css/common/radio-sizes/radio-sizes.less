@@ -1,0 +1,43 @@
+.control-group {
+    display: flex;
+    margin-left: 1px;
+
+    &__item {
+        flex-grow: 1;
+        margin-left: -1px;
+    }
+}
+
+.control-switcher {
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid #dfdedd;
+    height: 38px;
+    line-height: 36px;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+
+    &__radio {
+        position: absolute;
+        clip: rect(0 0 0 0);
+
+        &:checked ~ .control-switcher__text {
+            background-color: #eee;
+        }
+
+        &:hover ~ .control-switcher__text,
+        &:focus ~ .control-switcher__text{
+            outline: 1px solid #dfdedd;
+            z-index: 1;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
