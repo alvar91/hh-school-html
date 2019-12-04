@@ -80,7 +80,7 @@ a:focus {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 767px) {
-  .button__only-s-stretched {
+  .button_only-s-stretched {
     width: 100%;
   }
 }
@@ -361,10 +361,10 @@ a:focus {
 .select:focus {
   background-color: #EEEEEE;
 }
-.select__arrows {
+.select_arrows {
   background: url(select-arrow-down.89104913.svg) right -1px center no-repeat #f9f9f9;
 }
-.select__arrows:focus {
+.select_arrows:focus {
   background: url(select-arrow-up.d30c4fad.svg) right -1px center no-repeat #EEEEEE;
 }
 .form__text_area {
@@ -539,17 +539,25 @@ a:focus {
 }
 .slider__wrapper {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   align-items: center;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .slider__wrapper {
+    flex-direction: row;
+  }
 }
 @media (max-width: 767px) {
   .slider__market {
+    width: 100%;
     order: 3;
     text-align: center;
   }
 }
 @media (min-width: 768px) {
   .slider__market {
+    width: 50%;
     order: 1;
     text-align: left;
   }
@@ -559,16 +567,18 @@ a:focus {
 }
 @media (max-width: 767px) {
   .slider__products {
+    width: 100%;
     order: 1;
   }
 }
 @media (min-width: 768px) {
   .slider__products {
+    width: 50%;
     order: 3;
   }
 }
 .slider__dots {
-  text-align: center;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .slider__dots {
@@ -815,10 +825,6 @@ a:focus {
 .popup-order__content {
   padding: 40px;
 }
-.popup-order__formular {
-  display: flex;
-  justify-content: space-between;
-}
 .popup-order__title {
   margin: 0;
   font: 36px/1.2 ProximaNovaCond, Arial, sans-serif;
@@ -885,7 +891,9 @@ a:focus {
   margin-bottom: 20px;
 }
 .formular__product {
-  margin-top: 50px;
+  position: absolute;
+  top: 135px;
+  right: 40px;
   max-width: 290px;
 }
 @media (max-width: 767px) {
@@ -920,9 +928,6 @@ a:focus {
 }
 .phone-number__country-code {
   width: 38px;
-}
-.noborder-right {
-  border-right: 0;
 }
 .popup-card-icon_exit {
   background-image: url(exit-icon-ellipse.622975b9.svg);
