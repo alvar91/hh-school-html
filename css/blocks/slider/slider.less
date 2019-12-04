@@ -7,18 +7,23 @@
         padding-top: 60px;
         padding-bottom: 20px;
     }
-
     &__wrapper {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column wrap;
         align-items: center;
+        text-align: center;
+        @media @screen-gt-s {
+            flex-direction: row;
+        }
     }
     &__market {
         @media @screen-only-s {
+            width: 100%;
             order: 3;
             text-align: center;
         }
         @media @screen-gt-s {
+            width: 50%;
             order: 1;
             text-align: left;
         }
@@ -26,14 +31,16 @@
     &__products {
         text-align: center;
         @media @screen-only-s {
+            width: 100%;
             order: 1;
         }
         @media @screen-gt-s {
+            width: 50%;
             order: 3;
         }
     }
     &__dots {
-        text-align: center;
+        width: 100%;
         @media @screen-only-s {
             order: 2;
             margin: 9px 0; 
@@ -80,13 +87,13 @@
         @media @screen-only-s {
             max-width: 290px;
         }
-
         @media @screen-only-m {
             max-width: 330px;
         }
-
         @media @screen-only-l {
             max-width: 500px;
         }
     }
 }
+
+
