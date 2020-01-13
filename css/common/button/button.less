@@ -1,39 +1,77 @@
 .default-button() {
-    box-sizing: border-box;
-    height: @control-height;
-    display: inline-block;
-    padding: 0 15px;
-    border: 1px solid transparent;
-    border-radius: 1px;
-    background: @color-primary;
-    font: 14px/(@control-height - 2px) Arial, sans-serif;
-    text-align: center;
-    color: #fff;
-    user-select: none;
-    cursor: pointer;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-    transition-property: background-color, border-color, color;
-    -webkit-appearance: none;
+  box-sizing: border-box;
+  height: @control-height;
+  display: inline-block;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  background: @color-primary;
+  font: 14px/ (@control-height - 2px) Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-property: background-color, border-color, color;
+  -webkit-appearance: none;
 }
 
 .button {
-    .default-button();
+  .default-button();
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: @color-primary-hover;
-        outline: none;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @color-primary-hover;
+    outline: none;
+  }
 
-    &:active {
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+  &:active {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
 }
 
-.button_only-s-stretched {
-    @media @screen-only-s {
-        width: 100%
-    }
+.default-button-link() {
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+  background: transparent;
+  font: 14px/1.14 Arial, sans-serif;
+  text-align: center;
+  color: @color-grey;
+  user-select: none;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-property: background-color, border-color, color;
+  -webkit-appearance: none;
+}
+
+.button-link {
+  .default-button-link();
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #c00;
+    outline: none;
+  }
+}
+
+.button_stretched {
+  width: 100%;
+}
+
+.button_disabled {
+  cursor: default;
+  background: @color-disabled;
+  &:hover,
+  &:focus,
+  &:active {
+    background: @color-disabled;
+  }
+  &:active {
+    box-shadow: none;
+  }
 }

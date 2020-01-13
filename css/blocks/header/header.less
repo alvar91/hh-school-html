@@ -1,76 +1,82 @@
 .header {
-    background-color: @color-dark;
-    color: #fff;
+  background-color: @color-dark;
+  color: #fff;
 
-    &__content {
-        height: 60px;
-        display: flex;
-        align-items: center;
+  &__content {
+    height: 60px;
+    display: flex;
+    align-items: center;
 
-        @media @screen-gt-m {
-            height: 80px;
-        }
+    @media @screen-gt-m {
+      height: 80px;
     }
+  }
 
-    &__fill {
-        flex-grow: 1;
-    }
+  &__fill {
+    flex-grow: 1;
+  }
 
-    &__button {
-        margin-left: 20px;
-    }
+  &__button {
+    margin-left: 20px;
+  }
 
-    &__button_menu {
-        @media @screen-gt-s {
-            display: none;
-        }
+  &__button_menu {
+    @media @screen-gt-s {
+      display: none;
     }
+  }
 }
 
 .header-button-icon {
-    width: 30px;
-    height: 30px;
-    background: no-repeat 50% 50%;
-    border: 0;
-    cursor: pointer;
-    text-indent: -9999px;
+  width: 30px;
+  height: 30px;
+  background: no-repeat 50% 50%;
+  border: 0;
+  cursor: pointer;
+  text-indent: -9999px;
 
-    &_search {
-        background-image: url('search-icon.svg');
+  &_search {
+    background-image: url("search-icon.svg");
+  }
+
+  &_login {
+    background-image: url("login-icon.svg");
+
+    @media @screen-gt-s {
+      display: none;
     }
+  }
 
-    &_login {
-        background-image: url('login-icon.svg');
-
-        @media @screen-gt-s {
-            display: none;
-        }
-    }
-
-    &_menu {
-        background-image: url('menu-icon.svg');
-    }
+  &_menu {
+    background-image: url("menu-icon.svg");
+  }
 }
 
 .header-button {
-    .default-button();
+  .default-button();
 
-    background: none;
-    border-color: rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    padding: 0 18px;
+  background: none;
+  border-color: rgba(204, 204, 204, 0.6);
+  border-radius: 60px;
+  padding: 0 15px;
 
-    &:hover,
-    &:focus {
-        border-color: #fff;
-        outline: none;
+  &:hover,
+  &:focus {
+    border-color: #fff;
+    outline: none;
+  }
+
+  &:active {
+    background: #ffffff;
+    border-color: #fff;
+    color: @color-text;
+  }
+
+  &_login {
+    display: none;
+
+    @media @screen-gt-s {
+      display: inline-block;
     }
-
-    &_login {
-        display: none;
-
-        @media @screen-gt-s {
-            display: inline-block;
-        }
-    }
+  }
 }

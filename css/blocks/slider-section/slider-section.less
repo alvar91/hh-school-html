@@ -1,0 +1,124 @@
+@keyframes slide {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100%, 0);
+  }
+}
+
+.slider-section {
+  background-color: @color-light;
+
+  &__heading {
+    text-align: center;
+
+    @media @screen-gt-s {
+      text-align: left;
+    }
+
+    @media @screen-gt-m {
+      margin-top: 60px;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 59%;
+    left: 50%;
+    @media (min-width: 360px) {
+      top: 61%;
+    }
+    @media (min-width: 400px) {
+      top: 63%;
+    }
+    @media (min-width: 450px) {
+      top: 65%;
+    }
+    @media (min-width: 500px) {
+      top: 66%;
+    }
+    @media (min-width: 530px) {
+      top: 69%;
+    }
+    @media (min-width: 580px) {
+      top: 70%;
+    }
+    @media (min-width: 594px) {
+      top: 75%;
+    }
+    @media @screen-gt-s {
+      position: relative;
+      padding: 20px 0 10px 0;
+    }
+  }
+
+  &__button {
+    margin-bottom: 30px;
+    text-align: center;
+    @media @screen-gt-s {
+      text-align: left;
+    }
+  }
+
+  &__column {
+    order: -1;
+    @media @screen-gt-s {
+      order: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &-container {
+      padding-top: 70%;
+      position: relative;
+    }
+  }
+
+  &__slide {
+    position: relative;
+    display: none;
+    padding-top: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    @media @screen-gt-s {
+      height: 270px;
+    }
+    @media @screen-gt-m {
+      height: 320px;
+    }
+    &_active {
+      display: block;
+    }
+    &_hide {
+      display: block;
+      animation: slide 0.5s ease-in;
+      animation-fill-mode: forwards;
+    }
+    &_show {
+      display: block;
+      animation: slide 0.5s ease-in;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.slider-section-button {
+  .button();
+}
+
+
+

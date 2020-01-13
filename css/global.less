@@ -1,21 +1,33 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    font: 14px/1.43 Arial, sans-serif;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font: 14px/1.43 Arial, sans-serif;
+  color: @color-text;
 }
 
 a {
-    color: #609fcf;
-    text-decoration: none;
+  color: #609fcf;
+  text-decoration: none;
+  display: inline-block;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 
-    &:active, &:focus {
-        outline: none;
-        color: #c00;
-    }
+  &:active,
+  &:focus {
+    outline: none;
+    color: #c00;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

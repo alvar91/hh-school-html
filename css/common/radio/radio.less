@@ -1,0 +1,50 @@
+.radio {
+  display: none;
+
+  &-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #c5c9ca;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: #ffffff;
+    margin-right: 10px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-property: border, background-image, background-color;
+    -webkit-appearance: none;
+  }
+
+  &:checked+& {
+    &-box {
+      border: none;
+      background: url("radio.svg") no-repeat center center;
+    }
+  }
+
+  &-button {
+    box-sizing: border-box;
+    height: @control-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-color: #dfdedd;
+    border-radius: 1px;
+    background-color: #fff;
+    text-align: center;
+    color: @color-grey;
+    user-select: none;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-property: background-color, border-color, color;
+  }
+
+  &:checked+& {
+    &-button {
+      background-color: #eeeeee;
+      color: @color-text;
+    }
+  }
+}

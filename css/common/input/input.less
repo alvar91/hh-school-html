@@ -1,0 +1,55 @@
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 38px;
+  border: 1px solid #dfdedd;
+  padding: 0 10px;
+  outline: none;
+  font: 14px/1.43 Arial, sans-serif;
+
+  &::placeholder {
+    color: #aeb5b9;
+  }
+
+  &:-ms-input-placeholder {
+    color: #aeb5b9;
+  }
+
+  &:focus {
+    border-color: #0f8fee;
+  }
+
+  &_error {
+    border-color: #c52929;
+  }
+
+  &_phone-pre {
+    width: 38px;
+    border-right-width: 0;
+
+    &::placeholder {
+      color: @color-text;
+    }
+
+    &:-ms-input-placeholder {
+      color: @color-text;
+    }
+
+    &:focus {
+      border-right-width: 1px;
+    }
+  }
+
+  &_phone-code {
+    width: 63px;
+    border-right-width: 0;
+
+    &:focus {
+      border-right-width: 1px;
+    }
+  }
+
+  &_phone-number {
+    width: 100%;
+  }
+}

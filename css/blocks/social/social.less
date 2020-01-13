@@ -1,0 +1,26 @@
+.social {
+  margin-bottom: 30px;
+
+  @media @screen-gt-s {
+    margin-bottom: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media @screen-gt-m {
+      opacity: 0.6;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 1;
+      }
+    }
+  }
+}
