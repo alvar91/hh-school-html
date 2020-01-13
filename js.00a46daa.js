@@ -302,7 +302,7 @@ var orderTemplateGen = function orderTemplateGen(productInfo) {
   var templateSizes = (0, _productSizesGen.productSizesGen)(productInfo); //Составляем конечный шаблон на основе ранее
   //составленных подшаблонов 
 
-  var templateHTML = "\n        <div class=\"popup-order__product-card\">\n            <div class=\"popup-order__image-container\">\n                <img class=\"popup-order__image\" src=\"".concat(productInfo.image, "\" alt=\"").concat(productInfo.name, "\" />\n                ").concat(saleLabelHTML, "\n            </div>\n            <div class=\"popup-order__name\">").concat(productInfo.name, "</div>\n            <div class=\"popup-order__price\">\n                ").concat(salePriceHTML, " ").concat(productInfo.price, " \u20BD\n            </div>\n            <div class=\"popup-order__description\">").concat(productInfo.description, "</div>\n            <div class=\"popup-order__sizing-container\">\n                ").concat((0, _productSizesGen.productSizesGen)(productInfo), "\n            </div>\n        </div>\n    "); //Возвращаем полученный шаблон
+  var templateHTML = "\n        <div class=\"popup-order popup-order_active\">\n            <div class=\"columns-wrapper popup-order__columns\">\n            <button class=\"popup-order__button-close\">\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443 \u0442\u043E\u0432\u0430\u0440\u0430</button>\n            <div class=\"columns-row\">\n                <div class=\"column column_s-2 column_m-3 column_l-7\">\n                <div class=\"popup-order__form-container\">\n                    <form action=\"#\" class=\"form popup-order__form\">\n                    <div class=\"form__items\">\n                        <div class=\"heading popup-order__form-title\">\u041E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u0438\u0435 \u0437\u0430\u043A\u0430\u0437\u0430</div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u043E\u0435 \u043B\u0438\u0446\u043E</h3>\n                        <div class=\"form__item\">\n                            <input type=\"text\" name=\"user-name\" class=\"input js-form-element js-form-element-required\" placeholder=\"\u0424\u0418\u041E\" required />\n                        </div>\n                        <div class=\"form__item\">\n                            <input type=\"email\" name=\"user-email\" class=\"input js-form-element js-form-element-required\" placeholder=\"\u042D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u0430\u044F \u043F\u043E\u0447\u0442\u0430\" required />\n                        </div>\n                        <div class=\"form__item\">\n                            <input type=\"text\" class=\"input input_phone-pre js-form-element js-form-element-required\" value=\"+7\" />\n                            <input type=\"text\" name=\"code-country\" class=\"input input_phone-code js-form-element js-form-element-required\" placeholder=\"\u041A\u043E\u0434\" maxlength=\"3\" pattern=\"[0-9]{3}\"\n                            required />\n                            <input type=\"text\" name=\"mobile-number\" class=\"input input_phone-number js-form-element js-form-element-required\" placeholder=\"\u041D\u043E\u043C\u0435\u0440\" pattern=\"[0-9]{7}\"\n                            maxlength=\"7\" required />\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u0421\u043F\u043E\u0441\u043E\u0431 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0437\u0430\u043A\u0430\u0437\u0430</h3>\n                        <div class=\"form__item\">\n                            <label class=\"form__label popup-order__form-label\" for=\"delivery-1\">\n                            <input type=\"radio\" id=\"delivery-1\" name=\"delivery\" class=\"radio js-form-element\"\n                                value=\"devivery-1\" />\n                            <span class=\"radio-button popup-order__form-button\">\u0421\u0430\u043C\u043E\u0432\u044B\u0432\u043E\u0437</span>\n                            </label>\n                            <label class=\"form__label popup-order__form-label\" for=\"delivery-2\">\n                            <input type=\"radio\" id=\"delivery-2\" name=\"delivery\" class=\"radio js-form-element\"\n                                value=\"devivery-2\" checked />\n                            <span class=\"radio-button popup-order__form-button\">\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u0410\u0434\u0440\u0435\u0441</h3>\n                        <div class=\"form__item\">\n                            <select name=\"city\" class=\"select select_arrows js-form-element js-form-element-required\">\n                            <option disabled value=\"null\" class=\"option-city\" selected>\u0413\u043E\u0440\u043E\u0434</option>\n                            </select>\n                        </div>\n                        <div class=\"form__item\">\n                            <textarea name=\"address\" class=\"textarea js-form-element js-form-element-required\" maxlength=\"300\" required></textarea>\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u041E\u043F\u043B\u0430\u0442\u0430</h3>\n                        <div class=\"form__item\">\n                            <label for=\"online\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"online\" class=\"radio js-form-element\" value=\"online\" checked />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">Online-\u043E\u043F\u043B\u0430\u0442\u0430</span>\n                            </label>\n                        </div>\n                        <div class=\"form__item\">\n                            <label for=\"cash\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"cash\" class=\"radio js-form-element\" value=\"cash\" />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">\u041D\u0430\u043B\u0438\u0447\u043D\u044B\u043C\u0438</span>\n                            </label>\n                        </div>\n                        <div class=\"form__item\">\n                            <label for=\"card\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"card\" class=\"radio js-form-element\" value=\"card\" />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">\u041A\u0430\u0440\u0442\u043E\u0439 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u0423\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F</h3>\n                        <div class=\"form__item\">\n                            <label for=\"sms\" class=\"form__label\">\n                            <input type=\"checkbox\" name=\"sms\" id=\"sms\" class=\"checkbox js-form-element\" />\n                            <span class=\"checkbox-box\"></span>\n                            <span class=\"checkbox-text\">\u0425\u043E\u0447\u0443 \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C SMS \u0443\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__item\">\n                        <button type=\"submit\" class=\"button popup-order__form-button popup-order__form-button_submit\">\u041E\u0444\u043E\u0440\u043C\u0438\u0442\u044C\n                            \u0437\u0430\u043A\u0430\u0437</button>\n                        </div>\n                    </div>\n                    </form>\n                </div>\n                </div>\n                <div class=\"column column_s-0 column_m-0 column_l-1\"></div>\n                <div class=\"column column_s-0 column_m-3 column_l-4\">\n                <div class=\"popup-order__product\">\n                    <div class=\"popup-order__product-card\">\n                        <div class=\"popup-order__image-container\">\n                            <img class=\"popup-order__image\" src=\"".concat(productInfo.image, "\" alt=\"").concat(productInfo.name, "\" />\n                            ").concat(saleLabelHTML, "\n                        </div>\n                        <div class=\"popup-order__name\">").concat(productInfo.name, "</div>\n                        <div class=\"popup-order__price\">\n                            ").concat(salePriceHTML, " ").concat(productInfo.price, " \u20BD\n                        </div>\n                        <div class=\"popup-order__description\">").concat(productInfo.description, "</div>\n                        <div class=\"popup-order__sizing-container\">\n                            ").concat((0, _productSizesGen.productSizesGen)(productInfo), "\n                        </div>\n                    </div>\n                </div>\n                </div>\n            </div>\n            </div>\n        </div>\n    "); //Возвращаем полученный шаблон
 
   return templateHTML;
 };
@@ -1921,19 +1921,21 @@ var _outputSubmit = require("./outputSubmit");
 
 //Функция для отображения активной формы заказа для выбранного продукта
 var showOrder = function showOrder(productInfo) {
-  var activeOrder = document.querySelector(".popup-order_active"); //Генерируем шаблон с информацией по продукту
-
+  //Генерируем шаблон с информацией по продукту
   var productTemplate = (0, _orderTemplateGen.orderTemplateGen)(productInfo); //Вставляем шаблон с информацией по продукту на страницу
 
-  document.querySelector(".popup-order__product").insertAdjacentHTML("afterbegin", "".concat(productTemplate)); //При нажатии на крестик закрытия
+  document.querySelector(".footer").insertAdjacentHTML("afterend", "".concat(productTemplate));
+  var activeOrder = document.querySelector(".popup-order_active");
+  var body = document.querySelector("#body");
+  body.style.overflow = "hidden"; //При нажатии на крестик закрытия
   //снимаем с заказа статус активного
   //и удаляем информацию по предыдущему заказу
 
   var exitIcon = document.querySelector(".popup-order__button-close");
   var activeProduct = document.querySelector(".popup-order__product-card");
-  var body = document.querySelector("#body");
+  body = document.querySelector("#body");
   exitIcon.addEventListener("click", function () {
-    activeOrder.classList.remove("popup-order_active");
+    activeOrder.remove("popup-order_active");
     activeProduct.remove("popup-order__product-card");
     body.style.overflow = "auto";
   }); //Генерируем шаблон с городами для select и вставляем его на страницу
@@ -2033,20 +2035,15 @@ var showCard = function showCard(card) {
   exitIcon = document.querySelector(".product-card__button-close");
   orderInfo = document.querySelector(".product-card__order-info");
   orderButton.addEventListener("click", function () {
-    //Если кнопка заказа разблокирована, то навешиваем  обработчик
+    //Если кнопка заказа разблокирована
     if (!orderButton.disabled) {
-      var orderPopup = document.querySelector(".popup-order"); //Переводим статус формы заказа в активное состояние 
-
-      orderPopup.classList.add("popup-order_active");
-      var body = document.querySelector("#body");
-      body.style.overflow = "hidden"; //Снимаем с карточки товара активный статус с удалением
+      //Вызываем функцию для отображения активной формы заказа
+      (0, _showOrder.showOrder)(productInfo); //Снимаем с карточки товара активный статус с удалением
       //крестика закрытия и дополнительной информации по товару
 
       card.classList.remove("product-card_active");
       exitIcon.remove();
-      orderInfo.remove(); //Вызываем функцию для отображения активной формы заказа
-
-      (0, _showOrder.showOrder)(productInfo);
+      orderInfo.remove();
     }
   });
 };
@@ -2140,7 +2137,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63971" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65048" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
