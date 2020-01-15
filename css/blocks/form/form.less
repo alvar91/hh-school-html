@@ -1,0 +1,33 @@
+.form {
+  box-sizing: border-box;
+  width: 100%;
+
+  &__items-section {
+    position: relative;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &_error {
+    border: 1px solid @color-invalid;
+
+    &:valid {
+      border-color: @color-grey-light;
+    }
+  }
+}
+
+.option-city {
+  background-color: white;
+}

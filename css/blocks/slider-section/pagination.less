@@ -1,0 +1,20 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination__dot {
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-color: @color-grey-light;
+
+  &_active {
+    background-color: @color-dark;
+    outline: none;
+  }
+}

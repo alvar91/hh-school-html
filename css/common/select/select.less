@@ -1,28 +1,30 @@
 .select {
-    width: 100%;
-    display: inline-block;
-    background-color: #F9F9F9;
-    &:focus {
-        background-color: #EEEEEE;
-    }
-    border: 1px solid #C5C9CA;
-    border-radius: 2px;
-    font: 14px/1.2 @font-family-regular;
-    padding: 10px;
+  display: inline-block;
+  width: 100%;
+  padding: 8px;
+  margin: 0;
+  background-color: #F9F9F9;
 
-    margin: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+  &:focus {
+    background-color: #EEEEEE;
+  }
+
+  border: 1px solid #C5C9CA;
+  border-radius: 2px;
+  font: 14px/1.43 Arial,
+  sans-serif;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .select_arrows {
-    background: url(select-arrow-down.svg) right -1px center no-repeat #f9f9f9;
+  background: url(select-arrow-down.svg) right -1px center no-repeat #f9f9f9;
 
-    &:focus {
-        background: url(select-arrow-up.svg) right -1px center no-repeat #EEEEEE;
-    }
-
+  &:focus {
+    background: url(select-arrow-up.svg) right -1px center no-repeat #EEEEEE;
+  }
 }

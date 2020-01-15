@@ -1,37 +1,37 @@
 .grid {
-    background-image: linear-gradient(to right, transparent @column-padding-s * 2, rgba(255, 0, 0, 0.1) 1px);
-    background-size: calc(@column-width-s + @column-padding-s);
-    background-position: -10px 0;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    bottom: 0;
-    left: 15px;
-    right: 15px;
-    display: none;
-    pointer-events: none;
+  background-image: linear-gradient(to right, transparent @column-padding-s * 2, rgba(255, 0, 0, 0.1) 1px);
+  background-size: calc(@column-width-s + @column-padding-s);
+  background-position: -10px 0;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  display: none;
+  pointer-events: none;
 
-    @media @screen-only-s {
-        max-width: 590px;
-        margin: 0 auto;
-    }
+  @media @screen-only-s {
+    max-width: 590px;
+    margin: 0 auto;
+  }
 
-    @media @screen-gt-s {
-        background-image: linear-gradient(to right, transparent @column-padding-m * 2, rgba(255, 0, 0, 0.1) 1px);
-        background-size: @column-width-m auto;
-        background-position: -@column-padding-m 0;
-        width: @column-width-m * 6;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-    }
+  @media @screen-gt-s {
+    background-image: linear-gradient(to right, transparent @column-padding-m * 2, rgba(255, 0, 0, 0.1) 1px);
+    background-size: @column-width-m auto;
+    background-position: -@column-padding-m 0;
+    width: @column-width-m * 6;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 
-    @media @screen-gt-m {
-        background-size: @column-width-l auto;
-        width: @column-width-l * 12;
-    }
+  @media @screen-gt-m {
+    background-size: @column-width-l auto;
+    width: @column-width-l * 12;
+  }
 }
 
 .grid_visible {
-    display: block;
+  display: block;
 }

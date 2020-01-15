@@ -1,31 +1,31 @@
 .navbar {
-    display: none;
-    @media @screen-gt-s {
-        display: block;
-    }
-    &__content {
-        height: 40px;
-        display: flex;
-        align-items: center;
-    }
-    &-link {
-        color: #666;
-    }
-    &__fill {
-        flex-grow: 1;
-    }
-}
-.list {
-    &__item {
-        display: inline-block;
-        margin-left: 20px;
+  display: none;
 
-        @media @screen-gt-m {
-            margin-left: 30px;
-        }
-    }
+  @media @screen-gt-s {
+    display: block;
+  }
 
-    &__link {
-        color: #609FCF;
+  &__content {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav-list {
+    font-size: 14px;
+  }
+
+  &__nav-item {
+    margin-left: 20px;
+  }
+
+  &__nav-link {
+    color: #609fcf;
+
+    &:hover {
+      color: #c00;
+      text-decoration: none;
     }
+  }
 }

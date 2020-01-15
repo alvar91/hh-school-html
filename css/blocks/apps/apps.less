@@ -1,0 +1,36 @@
+.apps {
+  display: flex;
+
+  @media @screen-gt-s {
+    justify-content: flex-end;
+  }
+
+  @media @screen-gt-m {
+    justify-content: flex-start;
+  }
+
+  &__link {
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid #cccccc;
+    margin-right: 8px;
+    transition: all 0.2s ease;
+    max-width: 140px;
+    width: 100%;
+    height: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media @screen-gt-m {
+      opacity: 0.6;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 1;
+      }
+    }
+  }
+}
