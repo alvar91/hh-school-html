@@ -236,13 +236,13 @@ var productSizesGen = function productSizesGen(productInfo) {
 
       if (productInfo.sizes[size]) {
         if (productInfo.checkedSize && productInfo.checkedSize === size) {
-          templateSizes += "\n              <input type=\"radio\" name=\"size\" class=\"radio js-form-element\" value=\"".concat(size, "\" checked />\n            ");
+          templateSizes += "\n              <input type=\"radio\" name=\"size\" class=\"radio js-radio js-form-element\" value=\"".concat(size, "\" checked />\n            ");
         } else {
-          templateSizes += "\n            <input type=\"radio\" name=\"size\" class=\"radio js-form-element\" value=\"".concat(size, "\" />\n        ");
+          templateSizes += "\n            <input type=\"radio\" name=\"size\" class=\"radio js-radio js-form-element\" value=\"".concat(size, "\" />\n        ");
         }
       } else {
         //В ином случае делаем input недоступным для выбора
-        templateSizes += "\n                  <input type=\"radio\" name=\"size\" class=\"radio\" value=\"".concat(size, "\" disabled />\n              ");
+        templateSizes += "\n                  <input type=\"radio\" name=\"size\" class=\"radio js-radio\" value=\"".concat(size, "\" disabled />\n              ");
       }
 
       templateSizes += "<span class=\"radio-button product-card__sizing-button\">".concat(size, "</span>\n              </label>\n            </div>\n            ");
@@ -271,7 +271,7 @@ var productTemplateGen = function productTemplateGen(productInfo) {
   var templateSizes = (0, _productSizesGen.productSizesGen)(productInfo); //Составляем конечный шаблон на основе ранее
   //составленных подшаблонов 
 
-  var templateHTML = "\n    <div class=\"product-card__order-info\">\n        <div class=\"product-card__description\">\n            ".concat(productInfo.description, "\n        </div>\n        <div class=\"product-card__sizing-container\">\n            ").concat(templateSizes, "\n        </div>\n        <button class=\"button button_disabled product-card__button-order\" disabled >\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C</button>\n    </div>\n    ");
+  var templateHTML = "\n    <div class=\"product-card__order-info js-product-card__order-info\">\n        <div class=\"product-card__description\">\n            ".concat(productInfo.description, "\n        </div>\n        <div class=\"product-card__sizing-container\">\n            ").concat(templateSizes, "\n        </div>\n        <button class=\"button button_disabled product-card__button-order js-product-card__button-order\" disabled >\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C</button>\n    </div>\n    ");
   return templateHTML;
 };
 
@@ -302,7 +302,7 @@ var orderTemplateGen = function orderTemplateGen(productInfo) {
   var templateSizes = (0, _productSizesGen.productSizesGen)(productInfo); //Составляем конечный шаблон на основе ранее
   //составленных подшаблонов 
 
-  var templateHTML = "\n        <div class=\"popup-order popup-order_active\">\n            <div class=\"columns-wrapper popup-order__columns\">\n            <button class=\"popup-order__button-close\">\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443 \u0442\u043E\u0432\u0430\u0440\u0430</button>\n            <div class=\"columns-row\">\n                <div class=\"column column_s-2 column_m-3 column_l-7\">\n                <div class=\"popup-order__form-container\">\n                    <form action=\"#\" class=\"form popup-order__form\">\n                    <div class=\"form__items\">\n                        <div class=\"heading popup-order__form-title\">\u041E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u0438\u0435 \u0437\u0430\u043A\u0430\u0437\u0430</div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u043E\u0435 \u043B\u0438\u0446\u043E</h3>\n                        <div class=\"form__item\">\n                            <input type=\"text\" name=\"user-name\" class=\"input js-form-element js-form-element-required\" placeholder=\"\u0424\u0418\u041E\" required />\n                        </div>\n                        <div class=\"form__item\">\n                            <input type=\"email\" name=\"user-email\" class=\"input js-form-element js-form-element-required\" placeholder=\"\u042D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u0430\u044F \u043F\u043E\u0447\u0442\u0430\" required />\n                        </div>\n                        <div class=\"form__item\">\n                            <input type=\"text\" class=\"input input_phone-pre js-form-element js-form-element-required\" value=\"+7\" />\n                            <input type=\"text\" name=\"code-country\" class=\"input input_phone-code js-form-element js-form-element-required\" placeholder=\"\u041A\u043E\u0434\" maxlength=\"3\" pattern=\"[0-9]{3}\"\n                            required />\n                            <input type=\"text\" name=\"mobile-number\" class=\"input input_phone-number js-form-element js-form-element-required\" placeholder=\"\u041D\u043E\u043C\u0435\u0440\" pattern=\"[0-9]{7}\"\n                            maxlength=\"7\" required />\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u0421\u043F\u043E\u0441\u043E\u0431 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0437\u0430\u043A\u0430\u0437\u0430</h3>\n                        <div class=\"form__item\">\n                            <label class=\"form__label popup-order__form-label\" for=\"delivery-1\">\n                            <input type=\"radio\" id=\"delivery-1\" name=\"delivery\" class=\"radio js-form-element\"\n                                value=\"devivery-1\" />\n                            <span class=\"radio-button popup-order__form-button\">\u0421\u0430\u043C\u043E\u0432\u044B\u0432\u043E\u0437</span>\n                            </label>\n                            <label class=\"form__label popup-order__form-label\" for=\"delivery-2\">\n                            <input type=\"radio\" id=\"delivery-2\" name=\"delivery\" class=\"radio js-form-element\"\n                                value=\"devivery-2\" checked />\n                            <span class=\"radio-button popup-order__form-button\">\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u0410\u0434\u0440\u0435\u0441</h3>\n                        <div class=\"form__item\">\n                            <select name=\"city\" class=\"select select_arrows js-form-element js-form-element-required\">\n                            <option disabled value=\"null\" class=\"option-city\" selected>\u0413\u043E\u0440\u043E\u0434</option>\n                            </select>\n                        </div>\n                        <div class=\"form__item\">\n                            <textarea name=\"address\" class=\"textarea js-form-element js-form-element-required\" maxlength=\"300\" required></textarea>\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u041E\u043F\u043B\u0430\u0442\u0430</h3>\n                        <div class=\"form__item\">\n                            <label for=\"online\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"online\" class=\"radio js-form-element\" value=\"online\" checked />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">Online-\u043E\u043F\u043B\u0430\u0442\u0430</span>\n                            </label>\n                        </div>\n                        <div class=\"form__item\">\n                            <label for=\"cash\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"cash\" class=\"radio js-form-element\" value=\"cash\" />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">\u041D\u0430\u043B\u0438\u0447\u043D\u044B\u043C\u0438</span>\n                            </label>\n                        </div>\n                        <div class=\"form__item\">\n                            <label for=\"card\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"card\" class=\"radio js-form-element\" value=\"card\" />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">\u041A\u0430\u0440\u0442\u043E\u0439 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__block\">\n                        <h3 class=\"heading heading_level-3\">\u0423\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F</h3>\n                        <div class=\"form__item\">\n                            <label for=\"sms\" class=\"form__label\">\n                            <input type=\"checkbox\" name=\"sms\" id=\"sms\" class=\"checkbox js-form-element\" />\n                            <span class=\"checkbox-box\"></span>\n                            <span class=\"checkbox-text\">\u0425\u043E\u0447\u0443 \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C SMS \u0443\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__item\">\n                        <button type=\"submit\" class=\"button popup-order__form-button popup-order__form-button_submit\">\u041E\u0444\u043E\u0440\u043C\u0438\u0442\u044C\n                            \u0437\u0430\u043A\u0430\u0437</button>\n                        </div>\n                    </div>\n                    </form>\n                </div>\n                </div>\n                <div class=\"column column_s-0 column_m-0 column_l-1\"></div>\n                <div class=\"column column_s-0 column_m-3 column_l-4\">\n                <div class=\"popup-order__product\">\n                    <div class=\"popup-order__product-card\">\n                        <div class=\"popup-order__image-container\">\n                            <img class=\"popup-order__image\" src=\"".concat(productInfo.image, "\" alt=\"").concat(productInfo.name, "\" />\n                            ").concat(saleLabelHTML, "\n                        </div>\n                        <div class=\"popup-order__name\">").concat(productInfo.name, "</div>\n                        <div class=\"popup-order__price\">\n                            ").concat(salePriceHTML, " ").concat(productInfo.price, " \u20BD\n                        </div>\n                        <div class=\"popup-order__description\">").concat(productInfo.description, "</div>\n                        <div class=\"popup-order__sizing-container\">\n                            ").concat((0, _productSizesGen.productSizesGen)(productInfo), "\n                        </div>\n                    </div>\n                </div>\n                </div>\n            </div>\n            </div>\n        </div>\n    "); //Возвращаем полученный шаблон
+  var templateHTML = "\n        <div class=\"popup-order popup-order_active js-popup-order_active\">\n            <div class=\"columns-wrapper popup-order__columns\">\n            <button class=\"popup-order__button-close js-popup-order__button-close\">\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443 \u0442\u043E\u0432\u0430\u0440\u0430</button>\n            <div class=\"columns-row\">\n                <div class=\"column column_s-2 column_m-3 column_l-7\">\n                <div class=\"popup-order__form-container\">\n                    <form action=\"#\" class=\"form popup-order__form js-popup-order__form\">\n                    <div class=\"form__items\">\n                        <div class=\"heading popup-order__form-title\">\u041E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u0438\u0435 \u0437\u0430\u043A\u0430\u0437\u0430</div>\n                        <div class=\"form__items-section\">\n                        <h3 class=\"heading heading_level-3\">\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u043E\u0435 \u043B\u0438\u0446\u043E</h3>\n                        <div class=\"form__item\">\n                            <input type=\"text\" name=\"user-name\" class=\"input js-form-element js-form-element-required\" placeholder=\"\u0424\u0418\u041E\" required />\n                        </div>\n                        <div class=\"form__item\">\n                            <input type=\"email\" name=\"user-email\" class=\"input js-form-element js-form-element-required\" placeholder=\"\u042D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u0430\u044F \u043F\u043E\u0447\u0442\u0430\" required />\n                        </div>\n                        <div class=\"form__item\">\n                            <input type=\"text\" class=\"input input_phone-pre js-form-element js-form-element-required\" value=\"+7\" />\n                            <input type=\"text\" name=\"code-country\" class=\"input input_phone-code js-form-element js-form-element-required\" placeholder=\"\u041A\u043E\u0434\" maxlength=\"3\" pattern=\"[0-9]{3}\"\n                            required />\n                            <input type=\"text\" name=\"mobile-number\" class=\"input input_phone-number js-form-element js-form-element-required\" placeholder=\"\u041D\u043E\u043C\u0435\u0440\" pattern=\"[0-9]{7}\"\n                            maxlength=\"7\" required />\n                        </div>\n                        </div>\n                        <div class=\"form__items-section\">\n                        <h3 class=\"heading heading_level-3\">\u0421\u043F\u043E\u0441\u043E\u0431 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0437\u0430\u043A\u0430\u0437\u0430</h3>\n                        <div class=\"form__item\">\n                            <label class=\"form__label popup-order__form-label\" for=\"delivery-1\">\n                            <input type=\"radio\" id=\"delivery-1\" name=\"delivery\" class=\"radio js-form-element\"\n                                value=\"devivery-1\" />\n                            <span class=\"radio-button popup-order__form-button\">\u0421\u0430\u043C\u043E\u0432\u044B\u0432\u043E\u0437</span>\n                            </label>\n                            <label class=\"form__label popup-order__form-label\" for=\"delivery-2\">\n                            <input type=\"radio\" id=\"delivery-2\" name=\"delivery\" class=\"radio js-form-element\"\n                                value=\"devivery-2\" checked />\n                            <span class=\"radio-button popup-order__form-button\">\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__items-section\">\n                        <h3 class=\"heading heading_level-3\">\u0410\u0434\u0440\u0435\u0441</h3>\n                        <div class=\"form__item\">\n                            <select name=\"city\" class=\"select js-select select_arrows js-form-element js-form-element-required\">\n                            <option disabled value=\"null\" class=\"option-city\" selected>\u0413\u043E\u0440\u043E\u0434</option>\n                            </select>\n                        </div>\n                        <div class=\"form__item\">\n                            <textarea name=\"address\" class=\"textarea js-textarea js-form-element js-form-element-required\" maxlength=\"300\" required></textarea>\n                        </div>\n                        </div>\n                        <div class=\"form__items-section\">\n                        <h3 class=\"heading heading_level-3\">\u041E\u043F\u043B\u0430\u0442\u0430</h3>\n                        <div class=\"form__item\">\n                            <label for=\"online\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"online\" class=\"radio js-form-element\" value=\"online\" checked />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">Online-\u043E\u043F\u043B\u0430\u0442\u0430</span>\n                            </label>\n                        </div>\n                        <div class=\"form__item\">\n                            <label for=\"cash\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"cash\" class=\"radio js-form-element\" value=\"cash\" />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">\u041D\u0430\u043B\u0438\u0447\u043D\u044B\u043C\u0438</span>\n                            </label>\n                        </div>\n                        <div class=\"form__item\">\n                            <label for=\"card\" class=\"form__label\">\n                            <input type=\"radio\" name=\"pay\" id=\"card\" class=\"radio js-form-element\" value=\"card\" />\n                            <span class=\"radio-box\"></span>\n                            <span class=\"radio-text\">\u041A\u0430\u0440\u0442\u043E\u0439 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__items-section\">\n                        <h3 class=\"heading heading_level-3\">\u0423\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F</h3>\n                        <div class=\"form__item\">\n                            <label for=\"sms\" class=\"form__label\">\n                            <input type=\"checkbox\" name=\"sms\" id=\"sms\" class=\"checkbox js-form-element\" />\n                            <span class=\"checkbox-box\"></span>\n                            <span class=\"checkbox-text\">\u0425\u043E\u0447\u0443 \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C SMS \u0443\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F</span>\n                            </label>\n                        </div>\n                        </div>\n                        <div class=\"form__item\">\n                        <button type=\"submit\" class=\"button popup-order__form-button popup-order__form-button_submit\">\u041E\u0444\u043E\u0440\u043C\u0438\u0442\u044C\n                            \u0437\u0430\u043A\u0430\u0437</button>\n                        </div>\n                    </div>\n                    </form>\n                </div>\n                </div>\n                <div class=\"column column_s-0 column_m-0 column_l-1\"></div>\n                <div class=\"column column_s-0 column_m-3 column_l-4\">\n                <div class=\"popup-order__product\">\n                    <div class=\"popup-order__product-card js-popup-order__product-card\">\n                        <div class=\"popup-order__image-container\">\n                            <img class=\"popup-order__image\" src=\"".concat(productInfo.image, "\" alt=\"").concat(productInfo.name, "\" />\n                            ").concat(saleLabelHTML, "\n                        </div>\n                        <div class=\"popup-order__name\">").concat(productInfo.name, "</div>\n                        <div class=\"popup-order__price\">\n                            ").concat(salePriceHTML, " ").concat(productInfo.price, " \u20BD\n                        </div>\n                        <div class=\"popup-order__description\">").concat(productInfo.description, "</div>\n                        <div class=\"popup-order__sizing-container\">\n                            ").concat((0, _productSizesGen.productSizesGen)(productInfo), "\n                        </div>\n                    </div>\n                </div>\n                </div>\n            </div>\n            </div>\n        </div>\n    "); //Возвращаем полученный шаблон
 
   return templateHTML;
 };
@@ -1074,7 +1074,7 @@ var asyncLoader = function asyncLoader(url) {
         case 10:
           _context.prev = 10;
           _context.t0 = _context["catch"](0);
-          alert("Ошибка в получении данных от сервера");
+          alert("\u041E\u0448\u0438\u0431\u043A\u0430 \u0432 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0434\u0430\u043D\u043D\u044B\u0445 \u043E\u0442 \u0441\u0435\u0440\u0432\u0435\u0440\u0430.\n       \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u043F\u043E\u0434\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 \u043A \u0441\u0435\u0442\u0438 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442, \n       \u0435\u0441\u043B\u0438 \u0441\u0435\u0442\u044C \u0438\u0441\u043F\u0440\u0430\u0432\u043D\u0430, \u0442\u043E \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 \u0437\u0430\u043F\u0440\u043E\u0441 \u043F\u043E\u0437\u0436\u0435");
 
         case 13:
         case "end":
@@ -1834,7 +1834,7 @@ var validate = function validate(elements) {
     var _loop = function _loop() {
       var element = _step.value;
       element.addEventListener("invalid", function () {
-        element.classList.add("form-error");
+        element.classList.add("form_error");
       }, false);
       element.addEventListener("blur", function () {
         element.checkValidity();
@@ -1861,7 +1861,16 @@ var validate = function validate(elements) {
 };
 
 exports.validate = validate;
-},{"@babel/runtime-corejs2/core-js/get-iterator":"node_modules/@babel/runtime-corejs2/core-js/get-iterator.js"}],"js/components/popup-order/outputSubmit.js":[function(require,module,exports) {
+},{"@babel/runtime-corejs2/core-js/get-iterator":"node_modules/@babel/runtime-corejs2/core-js/get-iterator.js"}],"node_modules/core-js/library/fn/json/stringify.js":[function(require,module,exports) {
+var core = require('../../modules/_core');
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
+
+},{"../../modules/_core":"node_modules/core-js/library/modules/_core.js"}],"node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":[function(require,module,exports) {
+module.exports = require("core-js/library/fn/json/stringify");
+},{"core-js/library/fn/json/stringify":"node_modules/core-js/library/fn/json/stringify.js"}],"js/components/popup-order/outputSubmit.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1869,41 +1878,57 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.outputSubmit = void 0;
 
+var _stringify = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/json/stringify"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //Функция для формирования объекта с пользовательскими данными из формы
 var outputSubmit = function outputSubmit(allElements, productName) {
   var sendObj = {};
   allElements.forEach(function (element) {
     if (element.name === "user-name") {
-      sendObj["Имя пользователя"] = element.value;
+      //Имя пользователя
+      sendObj[element.name] = element.value;
     } else if (element.name === "user-email") {
-      sendObj["Электронный адрес пользователя"] = element.value;
+      //Электронный адрес пользователя
+      sendObj[element.name] = element.value;
     } else if (element.name === "user-name") {
-      sendObj["Имя пользователя"] = element.value;
+      //Имя пользователя
+      sendObj[element.name] = element.value;
     } else if (element.name === "code-country") {
-      sendObj["Код страны"] = element.value;
+      //Код страны
+      sendObj[element.name] = element.value;
     } else if (element.name === "mobile-number") {
-      sendObj["Номер мобильного телефона"] = element.value;
+      //Номер мобильного телефона
+      sendObj[element.name] = element.value;
     } else if (element.name === "delivery" && element.checked) {
-      sendObj["Выбранный способ получения"] = element.value;
+      //Выбранный способ получения
+      sendObj[element.name] = element.value;
     } else if (element.name === "city") {
-      sendObj["Выбранный город"] = element.value;
-    } else if (element.name === "address") {
-      sendObj["Указанный адрес"] = element.value;
+      //Выбранный город
+      sendObj[element.name] = element.value;
+    } else if (element.value && element.name === "address") {
+      //Указанный адрес
+      sendObj[element.name] = element.value;
     } else if (element.name === "pay" && element.checked) {
-      sendObj["Выбранный способ оплаты"] = element.value;
+      //Выбранный способ оплаты
+      sendObj[element.name] = element.value;
     } else if (element.name === "sms") {
-      sendObj["Оповещение по sms"] = element.checked;
+      //Оповещение по sms
+      sendObj[element.name] = element.checked;
     } else if (element.name === "size" && element.checked) {
-      sendObj["Выбранный размер"] = element.value;
+      //Выбранный размер
+      sendObj[element.name] = element.value;
     } else if (productName) {
-      sendObj["Выбранный продукт"] = productName;
+      //Выбранный продукт
+      sendObj["product-name"] = productName;
     }
   });
-  return sendObj;
+  return (0, _stringify.default)(sendObj);
 };
 
 exports.outputSubmit = outputSubmit;
-},{}],"js/components/popup-order/showOrder.js":[function(require,module,exports) {
+},{"@babel/runtime-corejs2/core-js/json/stringify":"node_modules/@babel/runtime-corejs2/core-js/json/stringify.js"}],"js/components/popup-order/showOrder.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1924,15 +1949,17 @@ var showOrder = function showOrder(productInfo) {
   //Генерируем шаблон с информацией по продукту
   var productTemplate = (0, _orderTemplateGen.orderTemplateGen)(productInfo); //Вставляем шаблон с информацией по продукту на страницу
 
-  document.querySelector(".footer").insertAdjacentHTML("afterend", "".concat(productTemplate));
-  var activeOrder = document.querySelector(".popup-order_active");
+  document.querySelector(".js-footer").insertAdjacentHTML("afterend", "".concat(productTemplate)); //Навешиваем обработчик на body
+  //При клике на подложку (body) удаляем order
+
+  var activeOrder = document.querySelector(".js-popup-order_active");
   var body = document.querySelector("#body");
   body.style.overflow = "hidden"; //При нажатии на крестик закрытия
   //снимаем с заказа статус активного
   //и удаляем информацию по предыдущему заказу
 
-  var exitIcon = document.querySelector(".popup-order__button-close");
-  var activeProduct = document.querySelector(".popup-order__product-card");
+  var exitIcon = document.querySelector(".js-popup-order__button-close");
+  var activeProduct = document.querySelector(".js-popup-order__product-card");
   body = document.querySelector("#body");
   exitIcon.addEventListener("click", function () {
     activeOrder.remove("popup-order_active");
@@ -1940,21 +1967,41 @@ var showOrder = function showOrder(productInfo) {
     body.style.overflow = "auto";
   }); //Генерируем шаблон с городами для select и вставляем его на страницу
 
-  var citySelect = document.querySelector(".select");
-  (0, _selectTemplateGen.selectTemplateGen)(citySelect); //Провалидируем все поля формы, обязательные для заполнения
+  var citySelect = document.querySelector(".js-select");
+  (0, _selectTemplateGen.selectTemplateGen)(citySelect); //Если был выбран самовывоз, то делаем select и textarea для ввода адреса недоступными
+  //Также исключаем select и textarea из выборки обязательных полей
+
+  var textArea = document.querySelector(".js-textarea");
+  var deliveryButtons = document.querySelectorAll("input[name = delivery]");
+  deliveryButtons.forEach(function (deliveryButton) {
+    deliveryButton.addEventListener("click", function (e) {
+      var target = e.target;
+
+      if (target.id === "delivery-1") {
+        citySelect.disabled = true;
+        citySelect.value = "null";
+        textArea.value = "";
+        textArea.classList.remove("form_error");
+        textArea.disabled = true;
+      } else {
+        textArea.disabled = false;
+        citySelect.disabled = false;
+      }
+    });
+  }); //Провалидируем все поля формы, обязательные для заполнения
 
   var elementsRequired = document.querySelectorAll(".js-form-element-required");
   (0, _validate.validate)(elementsRequired); //Навешиваем обработчик на submit
 
-  var submitForm = document.querySelector(".popup-order__form");
-  submitForm.addEventListener('submit', function (e) {
+  var submitForm = document.querySelector(".js-popup-order__form");
+  submitForm.addEventListener("submit", function (e) {
     e.preventDefault(); //Собираем все пользовательские данные из формы
 
     var allElements = document.querySelectorAll(".js-form-element"); //Упаковываем пользовательские данные в объект
 
-    var sendObj = (0, _outputSubmit.outputSubmit)(allElements, productInfo.name); //Выводим полученный объект в консоль
+    var sendJSON = (0, _outputSubmit.outputSubmit)(allElements, productInfo.name); //Выводим полученный объект в консоль
 
-    console.log(sendObj);
+    console.log(sendJSON);
   });
 };
 
@@ -1983,12 +2030,12 @@ var showCard = function showCard(card) {
 
   card.classList.add("product-card_active"); //Навешиваем крестик закрытия на активную карточку
 
-  card.insertAdjacentHTML("afterbegin", "<button class=\"product-card__button-close\">\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443 \u0442\u043E\u0432\u0430\u0440\u0430</button>"); //При нажатии на крестик закрытия
+  card.insertAdjacentHTML("afterbegin", "<button class=\"product-card__button-close js-product-card__button-close\">\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443 \u0442\u043E\u0432\u0430\u0440\u0430</button>"); //При нажатии на крестик закрытия
   //удаляем сам крестик и снимаем с карточки статус активной,
   //удаляем дополнитльную информацию о товаре
 
-  var exitIcon = document.querySelector(".product-card__button-close");
-  var orderInfo = document.querySelector(".product-card__order-info");
+  var exitIcon = document.querySelector(".js-product-card__button-close");
+  var orderInfo = document.querySelector(".js-product-card__order-info");
   exitIcon.addEventListener("click", function () {
     exitIcon.remove();
     orderInfo.remove();
@@ -2008,11 +2055,11 @@ var showCard = function showCard(card) {
   }); //Разблокируем кнопку "Заказать", при выборе размера для размерного товара
   //если товар безразмерный, то кнопка "Заказать" разблокируется автоматически
 
-  var orderButton = document.querySelector(".product-card__button-order");
+  var orderButton = document.querySelector(".js-product-card__button-order");
 
   if (productInfo.sizes) {
     //Eсли продукт имеет размерность
-    document.querySelectorAll(".radio").forEach(function (sizeLabel) {
+    document.querySelectorAll(".js-radio").forEach(function (sizeLabel) {
       //Если размер был уже выбран ранее, то разблокируем кнопку "Заказать"
       if (productInfo.checkedSize) {
         orderButton.classList.remove("button_disabled");
@@ -2032,8 +2079,8 @@ var showCard = function showCard(card) {
   } //Назначаем обработчики на кнопку "Заказать"
 
 
-  exitIcon = document.querySelector(".product-card__button-close");
-  orderInfo = document.querySelector(".product-card__order-info");
+  exitIcon = document.querySelector(".js-product-card__button-close");
+  orderInfo = document.querySelector(".js-product-card__order-info");
   orderButton.addEventListener("click", function () {
     //Если кнопка заказа разблокирована
     if (!orderButton.disabled) {
@@ -2087,12 +2134,12 @@ var _hideCard = require("./hideCard");
 
 //Навешиваем обработчики на все карточки
 //При клике на подложку (body) скрываем и удаляем элементы
-var cards = document.querySelectorAll(".product-card");
+var cards = document.querySelectorAll(".js-product-card");
 var body = document.querySelector("#body");
 
 var handlerActive = function handlerActive(event) {
   cards.forEach(function (card) {
-    if (event.target.closest(".product-card") === card) {
+    if (event.target.closest(".js-product-card") === card) {
       (0, _showCard.showCard)(card);
     } else {
       (0, _hideCard.hideCard)(card);
@@ -2137,7 +2184,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59962" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63072" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

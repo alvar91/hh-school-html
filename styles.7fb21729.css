@@ -1269,7 +1269,7 @@ ul {
   box-sizing: border-box;
   width: 100%;
 }
-.form__block {
+.form__items-section {
   position: relative;
   margin-bottom: 20px;
   box-sizing: border-box;
@@ -1283,10 +1283,10 @@ ul {
   display: flex;
   align-items: center;
 }
-.form-error {
+.form_error {
   border: 1px solid #C52929;
 }
-.form-error:valid {
+.form_error:valid {
   border-color: #dfdedd;
 }
 .option-city {
