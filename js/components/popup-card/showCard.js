@@ -51,19 +51,16 @@ export const showCard = card => {
     //Eсли продукт имеет размерность
     document.querySelectorAll(".js-radio").forEach(sizeLabel => {
       //Если размер был уже выбран ранее, то разблокируем кнопку "Заказать"
-      if(productInfo.checkedSize){
-        orderButton.classList.remove("button_disabled");
+      if (productInfo.checkedSize) {
         orderButton.disabled = false;
       }
       sizeLabel.addEventListener("click", () => {
-        orderButton.classList.remove("button_disabled");
         orderButton.disabled = false;
         productInfo.checkedSize = sizeLabel.value;
       });
     });
   } else {
     //Eсли продукт не имеет размерности
-    orderButton.classList.remove("button_disabled");
     orderButton.disabled = false;
   }
 
@@ -71,7 +68,6 @@ export const showCard = card => {
   exitIcon = document.querySelector(".js-product-card__button-close");
   orderInfo = document.querySelector(".js-product-card__order-info");
   orderButton.addEventListener("click", () => {
-
     //Если кнопка заказа разблокирована
     if (!orderButton.disabled) {
       //Вызываем функцию для отображения активной формы заказа

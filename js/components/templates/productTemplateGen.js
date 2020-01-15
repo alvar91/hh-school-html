@@ -16,7 +16,7 @@ export const productTemplateGen = productInfo => {
         <div class="product-card__sizing-container">
             ${templateSizes}
         </div>
-        <button class="button button_disabled product-card__button-order js-product-card__button-order" disabled >Заказать</button>
+        <button class="button product-card__button-order js-product-card__button-order" disabled >Заказать</button>
     </div>
     `;
     return templateHTML;
