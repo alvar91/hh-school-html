@@ -112,17 +112,8 @@ ul {
 .button_stretched {
   width: 100%;
 }
-.button_disabled {
-  cursor: default;
+.button:disabled {
   background: #87c6f7;
-}
-.button_disabled:hover,
-.button_disabled:focus,
-.button_disabled:active {
-  background: #87c6f7;
-}
-.button_disabled:active {
-  box-shadow: none;
 }
 .columns-wrapper {
   position: relative;

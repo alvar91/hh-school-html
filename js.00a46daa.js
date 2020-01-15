@@ -271,7 +271,7 @@ var productTemplateGen = function productTemplateGen(productInfo) {
   var templateSizes = (0, _productSizesGen.productSizesGen)(productInfo); //Составляем конечный шаблон на основе ранее
   //составленных подшаблонов 
 
-  var templateHTML = "\n    <div class=\"product-card__order-info js-product-card__order-info\">\n        <div class=\"product-card__description\">\n            ".concat(productInfo.description, "\n        </div>\n        <div class=\"product-card__sizing-container\">\n            ").concat(templateSizes, "\n        </div>\n        <button class=\"button button_disabled product-card__button-order js-product-card__button-order\" disabled >\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C</button>\n    </div>\n    ");
+  var templateHTML = "\n    <div class=\"product-card__order-info js-product-card__order-info\">\n        <div class=\"product-card__description\">\n            ".concat(productInfo.description, "\n        </div>\n        <div class=\"product-card__sizing-container\">\n            ").concat(templateSizes, "\n        </div>\n        <button class=\"button product-card__button-order js-product-card__button-order\" disabled >\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C</button>\n    </div>\n    ");
   return templateHTML;
 };
 
@@ -2062,19 +2062,16 @@ var showCard = function showCard(card) {
     document.querySelectorAll(".js-radio").forEach(function (sizeLabel) {
       //Если размер был уже выбран ранее, то разблокируем кнопку "Заказать"
       if (productInfo.checkedSize) {
-        orderButton.classList.remove("button_disabled");
         orderButton.disabled = false;
       }
 
       sizeLabel.addEventListener("click", function () {
-        orderButton.classList.remove("button_disabled");
         orderButton.disabled = false;
         productInfo.checkedSize = sizeLabel.value;
       });
     });
   } else {
     //Eсли продукт не имеет размерности
-    orderButton.classList.remove("button_disabled");
     orderButton.disabled = false;
   } //Назначаем обработчики на кнопку "Заказать"
 
@@ -2184,7 +2181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63072" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50439" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
