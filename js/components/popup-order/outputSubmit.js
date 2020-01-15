@@ -2,31 +2,43 @@
 export const outputSubmit = (allElements, productName) => {
   const sendObj = {};
   allElements.forEach(element => {
-    if(element.name === "user-name") {
-        sendObj["Имя пользователя"] = element.value;
-    } else if(element.name === "user-email") {
-        sendObj["Электронный адрес пользователя"] = element.value;
-    } else if(element.name === "user-name") {
-        sendObj["Имя пользователя"] = element.value;
-    } else if(element.name === "code-country") {
-        sendObj["Код страны"] = element.value;
-    } else if(element.name === "mobile-number") {
-        sendObj["Номер мобильного телефона"] = element.value;
-    } else if(element.name === "delivery" && element.checked){
-        sendObj["Выбранный способ получения"] = element.value;
-    } else if(element.name === "city"){
-        sendObj["Выбранный город"] = element.value;
-    } else if(element.name === "address"){
-        sendObj["Указанный адрес"] = element.value;
-    } else if(element.name === "pay" && element.checked){
-        sendObj["Выбранный способ оплаты"] = element.value;
-    } else if(element.name === "sms"){
-        sendObj["Оповещение по sms"] = element.checked;
-    } else if(element.name === "size" && element.checked){
-        sendObj["Выбранный размер"] = element.value;
+    if (element.name === "user-name") {
+      //Имя пользователя
+      sendObj[element.name] = element.value;
+    } else if (element.name === "user-email") {
+      //Электронный адрес пользователя
+      sendObj[element.name] = element.value;
+    } else if (element.name === "user-name") {
+      //Имя пользователя
+      sendObj[element.name] = element.value;
+    } else if (element.name === "code-country") {
+      //Код страны
+      sendObj[element.name] = element.value;
+    } else if (element.name === "mobile-number") {
+      //Номер мобильного телефона
+      sendObj[element.name] = element.value;
+    } else if (element.name === "delivery" && element.checked) {
+      //Выбранный способ получения
+      sendObj[element.name] = element.value;
+    } else if (element.name === "city") {
+      //Выбранный город
+      sendObj[element.name] = element.value;
+    } else if (element.value && element.name === "address") {
+      //Указанный адрес
+      sendObj[element.name] = element.value;
+    } else if (element.name === "pay" && element.checked) {
+      //Выбранный способ оплаты
+      sendObj[element.name] = element.value;
+    } else if (element.name === "sms") {
+      //Оповещение по sms
+      sendObj[element.name] = element.checked;
+    } else if (element.name === "size" && element.checked) {
+      //Выбранный размер
+      sendObj[element.name] = element.value;
     } else if (productName) {
-        sendObj["Выбранный продукт"] = productName;
+      //Выбранный продукт
+      sendObj["product-name"] = productName;
     }
   });
-  return sendObj;
+  return JSON.stringify(sendObj);
 };

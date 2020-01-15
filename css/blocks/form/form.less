@@ -2,7 +2,7 @@
   box-sizing: border-box;
   width: 100%;
 
-  &__block {
+  &__items-section {
     position: relative;
     margin-bottom: 20px;
     box-sizing: border-box;
@@ -18,8 +18,10 @@
     display: flex;
     align-items: center;
   }
-  &-error {
+
+  &_error {
     border: 1px solid @color-invalid;
+
     &:valid {
       border-color: @color-grey-light;
     }

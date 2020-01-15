@@ -2,6 +2,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -14,18 +15,14 @@
   padding-bottom: 15px;
   text-align: center;
   cursor: pointer;
+
   @media @screen-only-s {
-    width: 290px;
-  }  
-  @media @screen-only-m {
-    width: 180px;
-  }  
-  @media @screen-only-l {
-    width: 260px;
-  }  
+    width: 170px;
+  }
+
   &:hover {
     @media @screen-only-l {
-      box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.1);  
+      box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.1);
       transition-duration: 0.2s;
       transition-timing-function: ease;
     }
@@ -36,6 +33,7 @@
     z-index: 2;
     background-color: white;
     animation: showActiveCard 0.3s forwards;
+
     @media @screen-only-s {
       position: fixed;
       left: 50%;
@@ -57,6 +55,7 @@
     text-indent: -9999px;
     background-image: url(close-button.svg);
     z-index: 3;
+
     @media @screen-only-l {
       display: none;
     }
@@ -70,7 +69,17 @@
   }
 
   &__image {
-    max-width: 100%;
+    @media @screen-only-s {
+      width: 140px;
+    }
+
+    @media @screen-only-m {
+      width: 212px;
+    }
+
+    @media @screen-only-l {
+      width: 290px;
+    }
   }
 
   &__name {
@@ -102,9 +111,22 @@
   }
 
   &__order-info {
-    position: absolute;  
+    position: absolute;
     padding: 0 15px;
     padding-bottom: 15px;
+
+    @media @screen-only-s {
+      width: 140px;
+    }
+
+    @media @screen-only-m {
+      width: 180px;
+    }
+
+    @media @screen-only-l {
+      width: 260px;
+    }
+
     background-color: white;
     box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.1);
     z-index: 3;
@@ -115,34 +137,24 @@
     color: @color-grey;
   }
 
-  &__sizing {
-    &-container {
-      display: flex;
-      margin-bottom: 15px;
-    }
+  &__sizing-container {
+    display: flex;
+    margin-bottom: 15px;
+  }
 
-    &-box {
-      flex: 1 0;
+  &__sizing-box {
+    flex: 1 0;
 
-      &:last-child span {
-        border-right-width: 1px;
-      }
-    }
-
-    &-button {
-      border-right-width: 0;
+    &:last-child span {
+      border-right-width: 1px;
     }
   }
 
+  &__sizing-button {
+    border-right-width: 0;
+  }
+
   &__button-order {
-    @media @screen-only-s {
-      width: 260px;
-    }  
-    @media @screen-only-m {
-      width: 150px;
-    }  
-    @media @screen-only-l {
-      width: 230px;
-    } 
+    width: 100%;
   }
 }

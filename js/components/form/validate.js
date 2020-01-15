@@ -4,7 +4,7 @@ export const validate = elements => {
     element.addEventListener(
       "invalid",
       () => {
-        element.classList.add("form-error");
+        element.classList.add("form_error");
       },
       false
     );

@@ -15,14 +15,14 @@ export const showCard = card => {
   //Навешиваем крестик закрытия на активную карточку
   card.insertAdjacentHTML(
     "afterbegin",
-    `<button class="product-card__button-close">Закрыть карточку товара</button>`
+    `<button class="product-card__button-close js-product-card__button-close">Закрыть карточку товара</button>`
   );
 
   //При нажатии на крестик закрытия
   //удаляем сам крестик и снимаем с карточки статус активной,
   //удаляем дополнитльную информацию о товаре
-  let exitIcon = document.querySelector(".product-card__button-close");
-  let orderInfo = document.querySelector(".product-card__order-info");
+  let exitIcon = document.querySelector(".js-product-card__button-close");
+  let orderInfo = document.querySelector(".js-product-card__order-info");
   exitIcon.addEventListener("click", () => {
     exitIcon.remove();
     orderInfo.remove();
@@ -46,10 +46,10 @@ export const showCard = card => {
 
   //Разблокируем кнопку "Заказать", при выборе размера для размерного товара
   //если товар безразмерный, то кнопка "Заказать" разблокируется автоматически
-  const orderButton = document.querySelector(".product-card__button-order");
+  const orderButton = document.querySelector(".js-product-card__button-order");
   if (productInfo.sizes) {
     //Eсли продукт имеет размерность
-    document.querySelectorAll(".radio").forEach(sizeLabel => {
+    document.querySelectorAll(".js-radio").forEach(sizeLabel => {
       //Если размер был уже выбран ранее, то разблокируем кнопку "Заказать"
       if(productInfo.checkedSize){
         orderButton.classList.remove("button_disabled");
@@ -68,8 +68,8 @@ export const showCard = card => {
   }
 
   //Назначаем обработчики на кнопку "Заказать"
-  exitIcon = document.querySelector(".product-card__button-close");
-  orderInfo = document.querySelector(".product-card__order-info");
+  exitIcon = document.querySelector(".js-product-card__button-close");
+  orderInfo = document.querySelector(".js-product-card__order-info");
   orderButton.addEventListener("click", () => {
 
     //Если кнопка заказа разблокирована

@@ -9,14 +9,14 @@ export const productTemplateGen = productInfo => {
   //Составляем конечный шаблон на основе ранее
   //составленных подшаблонов 
   const templateHTML = `
-    <div class="product-card__order-info">
+    <div class="product-card__order-info js-product-card__order-info">
         <div class="product-card__description">
             ${productInfo.description}
         </div>
         <div class="product-card__sizing-container">
             ${templateSizes}
         </div>
-        <button class="button button_disabled product-card__button-order" disabled >Заказать</button>
+        <button class="button button_disabled product-card__button-order js-product-card__button-order" disabled >Заказать</button>
     </div>
     `;
     return templateHTML;

@@ -18,16 +18,16 @@ export const orderTemplateGen = productInfo => {
     //Составляем конечный шаблон на основе ранее
     //составленных подшаблонов 
     const templateHTML = `
-        <div class="popup-order popup-order_active">
+        <div class="popup-order popup-order_active js-popup-order_active">
             <div class="columns-wrapper popup-order__columns">
-            <button class="popup-order__button-close">Закрыть карточку товара</button>
+            <button class="popup-order__button-close js-popup-order__button-close">Закрыть карточку товара</button>
             <div class="columns-row">
                 <div class="column column_s-2 column_m-3 column_l-7">
                 <div class="popup-order__form-container">
-                    <form action="#" class="form popup-order__form">
+                    <form action="#" class="form popup-order__form js-popup-order__form">
                     <div class="form__items">
                         <div class="heading popup-order__form-title">Оформление заказа</div>
-                        <div class="form__block">
+                        <div class="form__items-section">
                         <h3 class="heading heading_level-3">Контактное лицо</h3>
                         <div class="form__item">
                             <input type="text" name="user-name" class="input js-form-element js-form-element-required" placeholder="ФИО" required />
@@ -43,7 +43,7 @@ export const orderTemplateGen = productInfo => {
                             maxlength="7" required />
                         </div>
                         </div>
-                        <div class="form__block">
+                        <div class="form__items-section">
                         <h3 class="heading heading_level-3">Способ получения заказа</h3>
                         <div class="form__item">
                             <label class="form__label popup-order__form-label" for="delivery-1">
@@ -58,18 +58,18 @@ export const orderTemplateGen = productInfo => {
                             </label>
                         </div>
                         </div>
-                        <div class="form__block">
+                        <div class="form__items-section">
                         <h3 class="heading heading_level-3">Адрес</h3>
                         <div class="form__item">
-                            <select name="city" class="select select_arrows js-form-element js-form-element-required">
+                            <select name="city" class="select js-select select_arrows js-form-element js-form-element-required">
                             <option disabled value="null" class="option-city" selected>Город</option>
                             </select>
                         </div>
                         <div class="form__item">
-                            <textarea name="address" class="textarea js-form-element js-form-element-required" maxlength="300" required></textarea>
+                            <textarea name="address" class="textarea js-textarea js-form-element js-form-element-required" maxlength="300" required></textarea>
                         </div>
                         </div>
-                        <div class="form__block">
+                        <div class="form__items-section">
                         <h3 class="heading heading_level-3">Оплата</h3>
                         <div class="form__item">
                             <label for="online" class="form__label">
@@ -93,7 +93,7 @@ export const orderTemplateGen = productInfo => {
                             </label>
                         </div>
                         </div>
-                        <div class="form__block">
+                        <div class="form__items-section">
                         <h3 class="heading heading_level-3">Уведомления</h3>
                         <div class="form__item">
                             <label for="sms" class="form__label">
@@ -114,7 +114,7 @@ export const orderTemplateGen = productInfo => {
                 <div class="column column_s-0 column_m-0 column_l-1"></div>
                 <div class="column column_s-0 column_m-3 column_l-4">
                 <div class="popup-order__product">
-                    <div class="popup-order__product-card">
+                    <div class="popup-order__product-card js-popup-order__product-card">
                         <div class="popup-order__image-container">
                             <img class="popup-order__image" src="${productInfo.image}" alt="${productInfo.name}" />
                             ${saleLabelHTML}

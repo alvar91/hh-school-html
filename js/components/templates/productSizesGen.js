@@ -11,17 +11,17 @@ export const productSizesGen = productInfo => {
       if (productInfo.sizes[size]) {
         if (productInfo.checkedSize && productInfo.checkedSize === size) {
           templateSizes += `
-              <input type="radio" name="size" class="radio js-form-element" value="${size}" checked />
+              <input type="radio" name="size" class="radio js-radio js-form-element" value="${size}" checked />
             `;
         } else {
           templateSizes += `
-            <input type="radio" name="size" class="radio js-form-element" value="${size}" />
+            <input type="radio" name="size" class="radio js-radio js-form-element" value="${size}" />
         `;
         }
       } else {
         //В ином случае делаем input недоступным для выбора
         templateSizes += `
-                  <input type="radio" name="size" class="radio" value="${size}" disabled />
+                  <input type="radio" name="size" class="radio js-radio" value="${size}" disabled />
               `;
       }
       templateSizes += `<span class="radio-button product-card__sizing-button">${size}</span>
